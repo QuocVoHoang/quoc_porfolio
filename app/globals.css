@@ -1,26 +1,80 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
+
+/* Biến toàn cục */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --header-height: 60px;
+  --radius: 0.625rem;
+
+  /* Giữ cố định màu nền và chữ */
+  --background: #000000;
+  --foreground: #ffffff;
+
+  /* Các biến khác (để tránh lỗi shadcn) */
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+  --secondary: #222222;
+  --secondary-foreground: #ffffff;
+  --muted: #333333;
+  --muted-foreground: #cccccc;
+  --accent: #444444;
+  --accent-foreground: #ffffff;
+  --border: #444444;
+  --input: #444444;
+  --ring: #666666;
+  --card: #111111;
+  --card-foreground: #ffffff;
 }
 
+/* Mapping cho Tailwind theme */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Utility: tính chiều cao trừ header */
+@layer utilities {
+  .h-screen-minus-header {
+    height: calc(100vh - var(--header-height));
   }
 }
 
+/* Toàn bộ trang */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-[var(--background)] text-[var(--foreground)] font-sans;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Xóa hoàn toàn dark mode */
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+/* Base style */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
