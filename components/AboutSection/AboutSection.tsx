@@ -1,4 +1,6 @@
 import { Github, Linkedin } from "lucide-react";
+import { ShimmerButton } from "../ui/shimmer-button";
+import { InteractiveHoverButton } from "../ui/interactive-hover-button";
 
 const skills: string[] = [
   "HTML", "css", "Javascript", "ReactJS", "NextJS", "Redux", "Jotai", "Zustand", "MUI", "Tailwindcss", "Python", "FastAPI", "Git", "Jira", "PostgresQL", "AWS", "GGCP"
@@ -27,7 +29,7 @@ export default function AboutSection() {
           </p>
 
           <div className="flex flex-row mt-10 gap-5">
-            <div
+            <InteractiveHoverButton
               className="bg-[#D3E97A] lg:p-5 lg:px-10 px-2 flex items-center cursor-pointer rounded-full text-black hover:bg-[#a1b93a] transition-all duration-300 text-sm font-bold"
               onClick={() => {
                 const link = document.createElement("a");
@@ -37,19 +39,25 @@ export default function AboutSection() {
               }}
             >
               DOWNLOAD RESUME
-            </div>
+            </InteractiveHoverButton>
 
-            <div className="text-[#D3E97A] w-[60px] h-[60px] flex items-center justify-center bg-[#222222] rounded-full cursor-pointer hover:bg-[#535151] transition-all duration-300"
+            <ShimmerButton
+              className="shadow-2xl w-[60px] h-[60px] p-0"
               onClick={() => window.open('https://www.linkedin.com/in/quoc-vo-103b9b279/', '_blank')}
             >
-              <Linkedin />
-            </div>
+              <div className="text-[#D3E97A]  flex items-center justify-center bg-[#222222] rounded-full cursor-pointer hover:bg-[#535151] transition-all duration-300" >
+                <Linkedin />
+              </div>
+            </ShimmerButton>
 
-            <div className="text-[#D3E97A] w-[60px] h-[60px] flex items-center justify-center bg-[#222222] rounded-full cursor-pointer hover:bg-[#535151] transition-all duration-300"
+            <ShimmerButton
+              className="shadow-2xl w-[60px] h-[60px] p-0"
               onClick={() => window.open('https://github.com/QuocVoHoang', '_blank')}
             >
-              <Github />
-            </div>
+              <div className="text-[#D3E97A]  flex items-center justify-center bg-[#222222] rounded-full cursor-pointer hover:bg-[#535151] transition-all duration-300">
+                <Github />
+              </div>
+            </ShimmerButton>
           </div>
         </div>
       </div>
@@ -103,7 +111,7 @@ export default function AboutSection() {
             <p>- Speaking: 130</p>
             <p>- Writing: 180</p>
           </div>
-          <div
+          <InteractiveHoverButton
             className="mt-3 w-fit bg-[#D3E97A] py-3 px-5 cursor-pointer rounded-full text-black hover:bg-[#a1b93a] transition-all duration-300 text-sm font-bold"
             onClick={() => {
               const link = document.createElement("a");
@@ -113,7 +121,7 @@ export default function AboutSection() {
             }}
           >
             CLICK TO VIEW
-          </div>
+          </InteractiveHoverButton>
         </div>
       </div>
 

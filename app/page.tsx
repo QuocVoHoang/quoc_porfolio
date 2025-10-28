@@ -5,6 +5,7 @@ import ProductsSection from '@/components/ProductsSection/ProductsSection';
 import OverviewSection from '@/components/OverviewSection/OverviewSection';
 import TopNavBar from '@/components/TopNavBar/TopNavBar';
 import { useHome } from '@/hooks/useHome';
+import { FlickeringGrid } from '@/components/ui/flickering-grid';
 
 export default function HomePage() {
   const {
@@ -16,7 +17,19 @@ export default function HomePage() {
   } = useHome()
 
   return (
-    <div>
+    <div className='relative'>
+
+      <FlickeringGrid
+        className="absolute inset-0 top-0 right-0 -z-10"
+        squareSize={4}
+        gridGap={6}
+        color="#6B7280"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+        height={800}
+        width={800}
+      />
+
       <TopNavBar
         navbarRef={navbarRef!}
         overviewRef={overviewRef!}
