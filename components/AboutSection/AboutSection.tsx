@@ -84,7 +84,7 @@ export default function AboutSection() {
 
             <div className="flex mb-6">
               <div className="w-1/4 pr-4 border-r border-gray-400">
-                <div className="font-bold text-lg text-white">2024 - present <br /> <p className="text-sm lg:text-lg">(expexted: 6-2026)</p></div>
+                <div className="font-bold text-lg text-white">2024 - present <br /> <p className="text-sm lg:text-lg">(expected: 6-2026)</p></div>
               </div>
               <div className="w-3/4 pl-6">
                 <h3 className="text-xl font-semibold text-[#D3E97A] mb-1">Ho Chi Minh University of Technology</h3>
