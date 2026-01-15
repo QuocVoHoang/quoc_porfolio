@@ -20,14 +20,12 @@ export default function HomePage() {
     <div className='relative'>
 
       <FlickeringGrid
-        className="absolute inset-0 top-0 right-0 -z-10"
+        className="absolute inset-0 top-0 right-0 -z-10 w-full"
         squareSize={4}
         gridGap={6}
         color="#6B7280"
         maxOpacity={0.5}
         flickerChance={0.1}
-        height={800}
-        width={800}
       />
 
       <TopNavBar
